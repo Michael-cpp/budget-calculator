@@ -3,32 +3,20 @@
     {
       "id": 1,
       "description": "Doctors Appointment",
-      "day": "March 1st at 2:30pm",
-      "reminder": true
+      "price_1": 1,
+      "price_2": 55
     },
     {
       "id": 2,
       "description": "Meeting at School",
-      "day": "March 3rd at 1:30pm",
-      "reminder": false
+      "price_1": 2,
+      "price_2": 50
     },
     {
-      "description": "adfsdfasdf",
-      "day": "sadfasdfasd",
-      "reminder": false,
-      "id": 7
-    },
-    {
-      "description": "werweweqrqwerew",
-      "day": "ewqrqwerwerrew",
-      "reminder": false,
-      "id": 8
-    },
-    {
-      "description": "adsfsdfas asdfasdfsadfasl;kfj;alskfj ;aklsdfj;alskfd;laksjd;f alksdfj",
-      "day": "dlskjf",
-      "reminder": false,
-      "id": 9
+      "description": "123541223",
+      "price_1": 0,
+      "price_2": 15,
+      "id": 10
     }
   ]
 }
