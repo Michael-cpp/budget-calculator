@@ -4,10 +4,10 @@
       <input type="text" v-model="description" name="description" placeholder="Description" />
     </div>
     <div class="form-control price-container width-45">
-      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="₾" />
+      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="&#8382;" />
     </div>
     <div class="price-container dot-container">
-      <p><strong>&#x25cf;</strong></p>
+      <p><strong>&bull;</strong></p>
     </div>
     <div class="form-control price-container width-45">
       <input type="number" min="0" max="95" step="5" v-model="price_2" name="price_2" placeholder="tetri" />
@@ -67,7 +67,7 @@ export default {
         alert('Please fill out price');
         return;
       }
-      let price = this.price_1 * 100 + this.price_2;
+      let price = Number(this.price_1) * 100 + Number(this.price_2);
       if(!price) {
         alert('Wrong price');
         return;
@@ -82,8 +82,7 @@ export default {
       }
       const newTask = {
         description: this.description,
-        price_1: this.price_1,
-        price_2: this.price_2,
+        price: price,
         buyer: this.buyer,
         owner: this.owner,
         date_create: new Date().getTime(),

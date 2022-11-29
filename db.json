@@ -2,30 +2,35 @@
   "tasks": [
     {
       "id": 1,
-      "description": "Doctor's Appointment",
-      "price_1": 1,
-      "price_2": 55,
+      "description": "шоколад",
+      "price": 155,
       "buyer": 1,
       "owner": 3,
-      "date_create": 1669579000
+      "date_create": 1669750906096
     },
     {
       "id": 2,
-      "description": "Meeting at School",
-      "price_1": 2,
-      "price_2": 50,
+      "description": "огурцы",
+      "price": 250,
       "buyer": 1,
       "owner": 3,
-      "date_create": 1669519000
+      "date_create": 1669750906096
     },
     {
-      "description": "asdfasdf",
-      "price_1": 3,
-      "price_2": 20,
+      "description": "помидоры",
+      "price": 322,
       "buyer": "2",
       "owner": "1",
-      "date_create": 1669579067665,
+      "date_create": 1669750906096,
       "id": 3
+    },
+    {
+      "description": "Пополнение баланса",
+      "price": 125,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1669750906096,
+      "id": 4
     }
   ]
 }
