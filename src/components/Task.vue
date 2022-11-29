@@ -9,6 +9,9 @@
     </h3>
     <p>{{task.price_1}}</p>
     <p>{{task.price_2}}</p>
+    <p>{{task.buyer}}</p>
+    <p>{{task.owner}}</p>
+    <p>{{task.date_create}}</p>
   </div>
 
 </template>

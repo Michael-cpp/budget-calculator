@@ -3,26 +3,27 @@
     <div class="form-control">
       <input type="text" v-model="description" name="description" placeholder="Description" />
     </div>
-    <div class="form-control">
-      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="Add Day & Time" />
+    <div class="form-control price-container width-45">
+      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="₾" />
+    </div>
+    <div class="price-container dot-container">
+      <p><strong>&#x25cf;</strong></p>
+    </div>
+    <div class="form-control price-container width-45">
+      <input type="number" min="0" max="95" step="5" v-model="price_2" name="price_2" placeholder="tetri" />
     </div>
     <div class="form-control">
-      <input type="number" min="0" max="95" step="5" v-model="price_2" name="price_2" placeholder="Add Day & Time" />
-    </div>
-    <div class="form-control">
-
       <select name="buyer" v-model="buyer">
-        <option value="">Buyer</option>
-        <option value="1">Mikhail</option>
-        <option value="2">Dmitry</option>
+        <option v-for="option in buyer_list" :value="option.value">
+          {{ option.text }}
+        </option>
       </select>
     </div>
     <div class="form-control">
-      <select name="owner">
-        <option value="">Owner</option>
-        <option value="1">Mikhail</option>
-        <option value="2">Dmitry</option>
-        <option value="3">Both</option>
+      <select name="owner" v-model="owner">
+        <option v-for="option in owner_list" :value="option.value">
+          {{ option.text }}
+        </option>
       </select>
     </div>
     <input type="submit" value="Save Task" class="btn btn-block" />
@@ -36,7 +37,23 @@ export default {
     return {
       description: '',
       price_1: 0,
-      price_2: 0,
+      price_2: "00",
+      buyer: 0,
+      owner: 0,
+      date_create : 0,
+
+      buyer_list: [
+        { text: 'Buyer', value: '0' },
+        { text: 'Mikhail', value: '1' },
+        { text: 'Dmitry', value: '2' },
+      ],
+      owner_selected: 0,
+      owner_list: [
+        { text: 'Owner', value: '0' },
+        { text: 'Mikhail', value: '1' },
+        { text: 'Dmitry', value: '2' },
+        { text: 'Both', value: '3' },
+      ],
     }
   },
   methods: {
@@ -49,7 +66,12 @@ export default {
       if(!this.price_1 && !this.price_2) {
         alert('Please fill out price');
         return;
-      }/*
+      }
+      let price = this.price_1 * 100 + this.price_2;
+      if(!price) {
+        alert('Wrong price');
+        return;
+      }
       if(!this.buyer) {
         alert('Please fill out buyer');
         return;
@@ -57,16 +79,22 @@ export default {
       if(!this.owner) {
         alert('Please fill out owner');
         return;
-      }*/
+      }
       const newTask = {
         description: this.description,
         price_1: this.price_1,
         price_2: this.price_2,
+        buyer: this.buyer,
+        owner: this.owner,
+        date_create: new Date().getTime(),
       }
       this.$emit('add-task', newTask);
       this.description = '';
       this.price_1 = 0;
       this.price_2 = 0;
+      this.buyer = 0;
+      this.owner = 0;
+      this.date_create = 0;
     }
   }
 }
@@ -88,7 +116,6 @@ export default {
 .form-control input, .form-control select {
   width: 100%;
   height: 40px;
-  margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
 }
@@ -106,5 +133,20 @@ export default {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+
+.price-container {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0;
+}
+
+.dot-container {
+  width: 10%;
+  text-align: center;
+}
+
+.width-45 {
+  width: 45%;
 }
 </style>

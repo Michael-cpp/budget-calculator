@@ -2,21 +2,30 @@
   "tasks": [
     {
       "id": 1,
-      "description": "Doctors Appointment",
+      "description": "Doctor's Appointment",
       "price_1": 1,
-      "price_2": 55
+      "price_2": 55,
+      "buyer": 1,
+      "owner": 3,
+      "date_create": 1669579000
     },
     {
       "id": 2,
       "description": "Meeting at School",
       "price_1": 2,
-      "price_2": 50
+      "price_2": 50,
+      "buyer": 1,
+      "owner": 3,
+      "date_create": 1669519000
     },
     {
-      "description": "123541223",
-      "price_1": 0,
-      "price_2": 15,
-      "id": 10
+      "description": "asdfasdf",
+      "price_1": 3,
+      "price_2": 20,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1669579067665,
+      "id": 3
     }
   ]
 }
