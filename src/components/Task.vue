@@ -5,10 +5,11 @@
       <i @click="$emit('delete-task', task.id)" class="fa-solid">x</i>
     </p>
     <h3>{{task.description}}</h3>
-    <p class="price">{{price}} &#8382; {{buyer}}</p>
-    <p>{{owner}}</p>
+    <p class="price">
+      <span class="price">{{price}} &#8382; {{buyer}}</span>
+      <span>{{owner}}</span>
+    </p>
   </div>
-
 </template>
 
 <script>
@@ -43,7 +44,7 @@ export default {
     this.owner_list = {
       1: 'Mikhail',
       2: 'Dmitry',
-      3: 'Both'
+      3: 'both'
     }
   },
   methods: {
@@ -68,7 +69,7 @@ export default {
     border-left: 5px solid green;
   }
 
-  .task .title {
+  .task .title, .task .price {
     display: flex;
     align-items: center;
     justify-content: space-between;

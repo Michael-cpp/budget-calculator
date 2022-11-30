@@ -1,9 +1,5 @@
 <template>
-  <Header
-      title="Task Tracker"
-      @toggle-add-task="toggleAddTask"
-      :showAddTask="showAddTask"
-  />
+  <Header title="Task Tracker" @toggle-add-task="toggleAddTask" :showAddTask="showAddTask"/>
   <router-view :showAddTask="showAddTask"></router-view>
 </template>
 
