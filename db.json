@@ -1,5 +1,5 @@
 {
-  "tasks": [
+  "purchases": [
     {
       "id": 1,
       "description": "шоколад",
@@ -25,12 +25,36 @@
       "id": 3
     },
     {
-      "description": "Пополнение баланса",
+      "description": "пополнение баланса",
       "price": 125,
       "buyer": "1",
       "owner": "2",
       "date_create": 1669750906096,
       "id": 4
+    },
+    {
+      "description": "Печенье",
+      "price": 730,
+      "buyer": "1",
+      "owner": "3",
+      "date_create": 1670069728379,
+      "id": 6
+    },
+    {
+      "description": "бананы",
+      "price": 415,
+      "buyer": "1",
+      "owner": "1",
+      "date_create": 1670070297738,
+      "id": 9
+    },
+    {
+      "description": "мандарины",
+      "price": 215,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670070443287,
+      "id": 10
     }
   ]
 }

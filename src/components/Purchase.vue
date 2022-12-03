@@ -1,10 +1,10 @@
 <template>
-  <div class="task">
+  <div class="purchase">
     <p class="title">
       {{date_create}}
-      <i @click="$emit('delete-task', task.id)" class="fa-solid">x</i>
+      <i @click="$emit('delete-purchase', purchase.id)" class="fa-solid">x</i>
     </p>
-    <h3>{{task.description}}</h3>
+    <h3>{{purchase.description}}</h3>
     <p class="price">
       <span class="price">{{price}} &#8382; {{buyer}}</span>
       <span>{{owner}}</span>
@@ -14,9 +14,9 @@
 
 <script>
 export default {
-  name: "Task",
+  name: "purchase",
   props: {
-    task: Object,
+    purchase: Object,
   },
   data() {
     return {
@@ -25,19 +25,19 @@ export default {
   },
   computed: {
     price() {
-      return this.task.price / 100;
+      return this.purchase.price / 100;
     },
     date_create() {
-      let date = new Date(this.task.date_create);
+      let date = new Date(this.purchase.date_create);
       let date_string = date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() + ' ' +
           date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
       return date_string;
     },
     buyer() {
-      return this.owner_list[this.task.buyer];
+      return this.owner_list[this.purchase.buyer];
     },
     owner() {
-      return this.owner_list[this.task.owner];
+      return this.owner_list[this.purchase.owner];
     }
   },
   created() {
@@ -59,23 +59,18 @@ export default {
     cursor: pointer;
   }
 
-  .task {
+  .purchase {
     background: #f4f4f4;
-    margin: 5px;
     padding: 10px 20px;
   }
 
-  .task.reminder {
-    border-left: 5px solid green;
-  }
-
-  .task .title, .task .price {
+  .purchase .title, .purchase .price {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .task .price {
+  .purchase .price {
     font-weight: bold;
   }
 </style>

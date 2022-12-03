@@ -26,13 +26,13 @@
         </option>
       </select>
     </div>
-    <input type="submit" value="Save Task" class="btn btn-block" />
+    <input type="submit" value="Save purchase" class="btn btn-block" />
   </form>
 </template>
 
 <script>
 export default {
-  name: "AddTask",
+  name: "Addpurchase",
   data() {
     return {
       description: '',
@@ -59,10 +59,13 @@ export default {
   methods: {
     onSubmit(e) {
       e.preventDefault();
+
+      let description = this.description.trim().toLowerCase();
       if(!this.description) {
         alert('Please fill out all required fields');
         return;
       }
+
       if(!this.price_1 && !this.price_2) {
         alert('Please fill out price');
         return;
@@ -72,6 +75,7 @@ export default {
         alert('Wrong price');
         return;
       }
+
       if(!this.buyer) {
         alert('Please fill out buyer');
         return;
@@ -80,14 +84,14 @@ export default {
         alert('Please fill out owner');
         return;
       }
-      const newTask = {
-        description: this.description,
+      const newpurchase = {
+        description: description,
         price: price,
         buyer: this.buyer,
         owner: this.owner,
         date_create: new Date().getTime(),
       }
-      this.$emit('add-task', newTask);
+      this.$emit('add-purchase', newpurchase);
       this.description = '';
       this.price_1 = 0;
       this.price_2 = 0;

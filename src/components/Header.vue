@@ -1,11 +1,12 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1>{{totalBudget}} &#8382;</h1>
     <Button
-        @btn-click="$emit('toggle-add-task')"
-        :description="showAddTask ? 'Close' : 'Add Task'"
-        :color="showAddTask ? 'red' : 'green'"
+        @btn-click="$emit('toggle-add-purchase')"
+        :description="showAddPurchase ? 'Close' : 'Add'"
+        :color="showAddPurchase ? 'red' : 'green'"
     />
+
   </header>
 </template>
 
@@ -16,7 +17,8 @@ export default {
   name: 'Header',
   props: {
     title: String,
-    showAddTask: Boolean,
+    showAddPurchase: Boolean,
+    totalBudget: 0,
   },
   components: {
     Button,
