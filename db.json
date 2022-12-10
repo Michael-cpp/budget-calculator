@@ -1,60 +1,308 @@
 {
   "purchases": [
     {
-      "id": 1,
-      "description": "шоколад",
-      "price": 155,
-      "buyer": 1,
-      "owner": 3,
-      "date_create": 1669750906096
+      "description": "1инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085502099,
+      "id": 1
     },
     {
-      "id": 2,
-      "description": "огурцы",
-      "price": 250,
-      "buyer": 1,
-      "owner": 3,
-      "date_create": 1669750906096
+      "description": "2морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085502098,
+      "id": 2
     },
     {
-      "description": "помидоры",
-      "price": 322,
+      "description": "3пополнение баланса",
+      "price": 14000,
       "buyer": "2",
       "owner": "1",
-      "date_create": 1669750906096,
+      "date_create": 1670085502099,
       "id": 3
     },
     {
-      "description": "пополнение баланса",
-      "price": 125,
+      "description": "4инициализация баланса",
+      "price": 4735,
       "buyer": "1",
       "owner": "2",
-      "date_create": 1669750906096,
+      "date_create": 1670085194695,
       "id": 4
     },
     {
-      "description": "Печенье",
-      "price": 730,
-      "buyer": "1",
+      "description": "4-1морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
       "owner": "3",
-      "date_create": 1670069728379,
+      "date_create": 1670085229495,
+      "id": 5
+    },
+    {
+      "description": "5пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
       "id": 6
     },
     {
-      "description": "бананы",
-      "price": 415,
+      "description": "6инициализация баланса",
+      "price": 4735,
       "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 7
+    },
+    {
+      "description": "7морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 8
+    },
+    {
+      "description": "8пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
       "owner": "1",
-      "date_create": 1670070297738,
+      "date_create": 1670085502099,
       "id": 9
     },
     {
-      "description": "мандарины",
-      "price": 215,
+      "description": "9инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 10
+    },
+    {
+      "description": "10морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 11
+    },
+    {
+      "description": "11пополнение баланса",
+      "price": 14000,
       "buyer": "2",
       "owner": "1",
-      "date_create": 1670070443287,
-      "id": 10
+      "date_create": 1670085502099,
+      "id": 12
+    },
+    {
+      "description": "12инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 13
+    },
+    {
+      "description": "13морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 14
+    },
+    {
+      "description": "14пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 15
+    },
+    {
+      "description": "15инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 16
+    },
+    {
+      "description": "16морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 17
+    },
+    {
+      "description": "17пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 18
+    },
+    {
+      "description": "18инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 19
+    },
+    {
+      "description": "19морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 20
+    },
+    {
+      "description": "20пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 21
+    },
+    {
+      "description": "21инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 22
+    },
+    {
+      "description": "22морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 23
+    },
+    {
+      "description": "23пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 24
+    },
+    {
+      "description": "24инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 25
+    },
+    {
+      "description": "25морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 26
+    },
+    {
+      "description": "26пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 27
+    },
+    {
+      "description": "27инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 28
+    },
+    {
+      "description": "28морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 29
+    },
+    {
+      "description": "29пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 30
+    },
+    {
+      "description": "30инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 31
+    },
+    {
+      "description": "31морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 32
+    },
+    {
+      "description": "32пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 33
+    },
+    {
+      "description": "33инициализация баланса",
+      "price": 4735,
+      "buyer": "1",
+      "owner": "2",
+      "date_create": 1670085194695,
+      "id": 34
+    },
+    {
+      "description": "34морковь, мыло, кукуруза, крабовые палочки",
+      "price": 1500,
+      "buyer": "2",
+      "owner": "3",
+      "date_create": 1670085229495,
+      "id": 35
+    },
+    {
+      "description": "35пополнение баланса",
+      "price": 14000,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670085502099,
+      "id": 36
+    },
+    {
+      "description": "adsfasdf",
+      "price": 120,
+      "buyer": "2",
+      "owner": "2",
+      "date_create": 1670163504076,
+      "id": 37
+    },
+    {
+      "description": "test1111111111111",
+      "price": 200,
+      "buyer": "2",
+      "owner": "1",
+      "date_create": 1670164108228,
+      "id": 38
     }
   ]
 }

@@ -1,7 +1,7 @@
 <template>
-  <Header title="purchase Tracker" @toggle-add-purchase="toggleAddPurchase" :showAddpurchase="showAddPurchase" :totalBudget="totalBudget" />
+  <Header title="purchase Tracker" @toggle-add-purchase="toggleAddPurchase" :showAddPurchase="showAddPurchase" :totalBudget="totalBudget" />
   <AddPurchase v-show="showAddPurchase" @add-purchase="addPurchase" />
-  <purchases @delete-purchase="deletePurchase" :purchases="purchases"/>
+  <purchases @delete-purchase="deletePurchase" :purchases_list="purchases_list"/>
 </template>
 
 <script>
@@ -22,6 +22,8 @@ export default {
     return {
       showAddPurchase: false,
       purchases: [],
+      purchases_list: [],
+      api_url: 'http://localhost:5000/',
     }
   },
   methods: {
@@ -29,7 +31,7 @@ export default {
       this.showAddPurchase = !this.showAddPurchase;
     },
     async addPurchase(purchase) {
-      const res = await fetch( 'http://localhost:5000/purchases', {
+      const res = await fetch( this.api_url+'purchases', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -38,27 +40,37 @@ export default {
       })
       const data = await res.json();
       this.purchases = [data, ...this.purchases];
+      this.purchases_list = [data, ...this.purchases_list];
     },
     async deletePurchase(id) {
       if(confirm('Are you sure?')) {
-        const res = await fetch(`http://localhost:5000/purchases/${id}`, {
+        const res = await fetch(this.api_url+`purchases/${id}`, {
           method: 'DELETE'
         });
         res.status === 200 ? (this.purchases = this.purchases.filter((purchase) => purchase.id !== id)) : alert('Error deleting purchase');
       }
     },
     async fetchPurchases() {
-      const res = await fetch('http://localhost:5000/purchases?_sort=date_create&_order=desc');
+      const res = await fetch(this.api_url+'purchases?_sort=date_create&_order=desc');
       const data = await res.json();
       return data;
     },
     async fetchPurchase(id) {
-      const res = await fetch(`http://localhost:5000/purchases/${id}`);
+      const res = await fetch(this.api_url+`purchases/${id}`);
       const data = await res.json();
       return data;
     },
     extra_round(num) {
       return Math.round((num + Number.EPSILON) * 100) / 100;
+    },
+    handleScroll() {
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 50) {
+        let len = this.purchases_list.length;
+        let add_data = this.purchases.slice(len, len+10)
+        this.purchases_list = [
+            ...this.purchases_list, ...add_data
+        ]
+      }
     }
   },
   computed: {
@@ -77,6 +89,8 @@ export default {
   },
   async created() {
     this.purchases = await this.fetchPurchases();
+    this.purchases_list = this.purchases.slice(0, 10);
+    window.addEventListener('scroll', this.handleScroll);
   }
 }
 
