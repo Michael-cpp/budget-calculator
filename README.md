@@ -3,23 +3,22 @@
 ## Project Setup
 
 ```sh
+cd ./vue
 npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
+cd ./vue
 npm run dev
-```
-
-### Run backend json-server
-
-```sh
-npm run backend
 ```
 
 ### Compile and Minify for Production
 
 ```sh
+cd ./vue
 npm run build
+cp ./src/* /production
 ```
+

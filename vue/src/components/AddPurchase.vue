@@ -89,7 +89,7 @@ export default {
         price: price,
         buyer: this.buyer,
         owner: this.owner,
-        date_create: new Date().getTime(),
+        //date_create: new Date().getTime(),
       }
       this.$emit('add-purchase', newpurchase);
       this.description = '';

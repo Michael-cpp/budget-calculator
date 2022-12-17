@@ -1,0 +1,38 @@
+services:
+  php:
+    build:
+      context: ./dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - './src:/var/www/html'
+    networks:
+      eventprojector-network:
+        ipv4_address: 172.83.24.11
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - './src:/var/www/html'
+      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+    networks:
+      eventprojector-network:
+        ipv4_address: 172.83.24.12
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - './db/mysql_data:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=Asia/Muscat
+    networks:
+      eventprojector-network:
+        ipv4_address: 172.83.24.13
+
+networks:
+  eventprojector-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.83.24.0/24

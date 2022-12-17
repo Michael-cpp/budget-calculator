@@ -23,7 +23,7 @@ export default {
       showAddPurchase: false,
       purchases: [],
       purchases_list: [],
-      api_url: 'http://localhost:5000/',
+      api_url: '/api/index.php?',
     }
   },
   methods: {
@@ -31,7 +31,7 @@ export default {
       this.showAddPurchase = !this.showAddPurchase;
     },
     async addPurchase(purchase) {
-      const res = await fetch( this.api_url+'purchases', {
+      const res = await fetch( this.api_url+'entity=purchase', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -44,19 +44,25 @@ export default {
     },
     async deletePurchase(id) {
       if(confirm('Are you sure?')) {
-        const res = await fetch(this.api_url+`purchases/${id}`, {
+        const res = await fetch(this.api_url+'entity=purchase&id='+id, {
           method: 'DELETE'
         });
-        res.status === 200 ? (this.purchases = this.purchases.filter((purchase) => purchase.id !== id)) : alert('Error deleting purchase');
+        if(res.status === 200) {
+          this.purchases = this.purchases.filter((purchase) => purchase.id !== id);
+          this.purchases_list = this.purchases_list.filter((purchase) => purchase.id !== id);
+        } else {
+          alert('Error deleting purchase');
+        }
       }
     },
     async fetchPurchases() {
-      const res = await fetch(this.api_url+'purchases?_sort=date_create&_order=desc');
+      const res = await fetch(this.api_url+'entity=purchase');
       const data = await res.json();
+      console.log(data);
       return data;
     },
     async fetchPurchase(id) {
-      const res = await fetch(this.api_url+`purchases/${id}`);
+      const res = await fetch(this.api_url+'entity=purchase&id='+id);
       const data = await res.json();
       return data;
     },

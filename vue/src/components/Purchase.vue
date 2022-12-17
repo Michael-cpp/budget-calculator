@@ -28,9 +28,14 @@ export default {
       return this.purchase.price / 100;
     },
     date_create() {
-      let date = new Date(this.purchase.date_create);
-      let date_string = String(date.getDate()).padStart(2, '0') + '.' + String(date.getMonth()).padStart(2, '0') + '.' + date.getFullYear() + ' ' +
-          date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+      let datetime = new Date(this.purchase.date_create);
+      let date = String(datetime.getDate()).padStart(2, '0');
+      let month = String(datetime.getMonth()).padStart(2, '0');
+      let year = datetime.getFullYear();
+      let hour = datetime.getHours();
+      let minute = datetime.getMinutes();
+      let second = String(datetime.getSeconds()).padStart(2, '0');
+      let date_string = date + '.' + month + '.' + year + ' ' + hour + ':' + minute + ':' + second;
       return date_string;
     },
     buyer() {
