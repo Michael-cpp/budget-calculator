@@ -5,9 +5,18 @@
 ```sh
 cd ./vue
 npm install
+npm run build
+
+sudo ln -s ~/work/test-project/budget-calculator/nginx/local/budget-calculator.conf /etc/nginx/conf.d/
+sudo systemctl reload nginx
+
+cd ../
+docker compose up -d
+
+import dump from ./db/init_database.sql
 ```
 
-### Compile and Hot-Reload for Development
+### Compile and hot-reload for frontend development
 
 ```sh
 cd ./vue
