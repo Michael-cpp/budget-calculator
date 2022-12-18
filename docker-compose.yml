@@ -7,7 +7,7 @@ services:
       - './src:/var/www/html'
     networks:
       eventprojector-network:
-        ipv4_address: 172.83.24.11
+        ipv4_address: 172.84.24.11
 
   nginx:
     image: nginx:latest
@@ -16,7 +16,7 @@ services:
       - './docker/nginx/conf.d:/etc/nginx/conf.d'
     networks:
       eventprojector-network:
-        ipv4_address: 172.83.24.12
+        ipv4_address: 172.84.24.12
 
   mysql:
     image: mysql:latest
@@ -27,7 +27,7 @@ services:
       - TZ=Asia/Muscat
     networks:
       eventprojector-network:
-        ipv4_address: 172.83.24.13
+        ipv4_address: 172.84.24.13
 
 networks:
   eventprojector-network:
@@ -35,4 +35,4 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 172.83.24.0/24
+        - subnet: 172.84.24.0/24

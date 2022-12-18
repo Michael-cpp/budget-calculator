@@ -20,7 +20,7 @@ if (!array_key_exists('entity', $_GET) || empty($_GET['entity']) || $_GET['entit
 
 $id = $_GET['id'] ?? null;
 
-$database = new Database("172.83.24.13", "budget_calculator", "root", "root");
+$database = new Database("172.84.24.13", "budget_calculator", "root", "root");
 
 $gateway = new PurchaseGateway($database);
 
