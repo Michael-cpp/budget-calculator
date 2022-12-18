@@ -19,6 +19,6 @@ npm run dev
 ```sh
 cd ./vue
 npm run build
-cp ./src/* /production
+cp ../src/* /production
 ```
 
