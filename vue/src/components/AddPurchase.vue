@@ -1,16 +1,16 @@
 <template>
   <form @submit="onSubmit" class="add-form">
     <div class="form-control">
-      <input type="text" v-model="description" name="description" placeholder="Description" />
+      <input type="text" v-model="description" name="description" placeholder="Description" required/>
     </div>
     <div class="form-control price-container width-45">
-      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="&#8382;" />
+      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="0"/>
     </div>
     <div class="price-container dot-container">
       <p><strong>&bull;</strong></p>
     </div>
     <div class="form-control price-container width-45">
-      <input type="number" min="0" max="95" step="5" v-model="price_2" name="price_2" placeholder="tetri" />
+      <input type="number" min="0" max="95" step="1" v-model="price_2" name="price_2" placeholder="00" />
     </div>
     <div class="form-control">
       <select name="buyer" v-model="buyer">
@@ -26,18 +26,24 @@
         </option>
       </select>
     </div>
-    <input type="submit" value="Save purchase" class="btn btn-block" />
+    <div class="form-control">
+      <input type="submit" value="Save purchase" class="btn btn-block" />
+    </div>
   </form>
 </template>
 
 <script>
+import Button from '../components/Button.vue'
 export default {
   name: "Addpurchase",
+  components: {
+    Button,
+  },
   data() {
     return {
       description: '',
-      price_1: 0,
-      price_2: "00",
+      price_1: '',
+      price_2: '',
       buyer: 0,
       owner: 0,
       date_create : 0,
@@ -93,8 +99,8 @@ export default {
       }
       this.$emit('add-purchase', newpurchase);
       this.description = '';
-      this.price_1 = 0;
-      this.price_2 = 0;
+      this.price_1 = '';
+      this.price_2 = '';
       this.buyer = 0;
       this.owner = 0;
       this.date_create = 0;
@@ -121,6 +127,7 @@ export default {
   height: 40px;
   padding: 3px 7px;
   font-size: 17px;
+  text-align: center;
 }
 
 .form-control-check {

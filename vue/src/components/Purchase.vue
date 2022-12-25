@@ -2,7 +2,7 @@
   <div class="purchase">
     <p class="title">
       {{date_create}}
-      <i @click="$emit('delete-purchase', purchase.id)" class="fa-solid">x</i>
+      <p @click="$emit('delete-purchase', purchase.id)" class="del-btn">x</p>
     </p>
     <h3>{{purchase.description}}</h3>
     <p class="price">
@@ -33,7 +33,7 @@ export default {
       let month = String(datetime.getMonth()).padStart(2, '0');
       let year = datetime.getFullYear();
       let hour = datetime.getHours();
-      let minute = datetime.getMinutes();
+      let minute = String(datetime.getMinutes()).padStart(2, '0');
       let second = String(datetime.getSeconds()).padStart(2, '0');
       let date_string = date + '.' + month + '.' + year + ' ' + hour + ':' + minute + ':' + second;
       return date_string;
@@ -42,6 +42,9 @@ export default {
       return this.owner_list[this.purchase.buyer];
     },
     owner() {
+      if(this.purchase.owner === 3) {
+        return '';
+      }
       return this.owner_list[this.purchase.owner];
     }
   },
@@ -59,9 +62,11 @@ export default {
 </script>
 
 <style scoped>
-  .fa-solid {
+  .del-btn {
     color: red;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
   }
 
   .purchase {

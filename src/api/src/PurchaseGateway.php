@@ -12,7 +12,8 @@ class PurchaseGateway
     public function getAll(): array
     {
         $sql = "SELECT *
-                FROM purchase";
+                FROM purchase
+                ORDER BY id DESC";
                 
         $stmt = $this->conn->query($sql);
 
