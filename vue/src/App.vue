@@ -24,6 +24,7 @@ export default {
       purchases: [],
       purchases_list: [],
       api_url: '/api/index.php?',
+      //api_url: 'http://budget-calculator.localhost/api/index.php?',
     }
   },
   methods: {

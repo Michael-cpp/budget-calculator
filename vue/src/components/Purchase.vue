@@ -30,7 +30,7 @@ export default {
     date_create() {
       let datetime = new Date(this.purchase.date_create);
       let date = String(datetime.getDate()).padStart(2, '0');
-      let month = String(datetime.getMonth()).padStart(2, '0');
+      let month = String(datetime.getMonth()+1).padStart(2, '0');
       let year = datetime.getFullYear();
       let hour = datetime.getHours();
       let minute = String(datetime.getMinutes()).padStart(2, '0');
