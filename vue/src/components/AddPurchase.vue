@@ -1,16 +1,16 @@
 <template>
   <form @submit="onSubmit" class="add-form">
     <div class="form-control">
-      <input type="text" v-model="description" name="description" placeholder="Description" required/>
+      <input type="text" v-model="description" name="description" placeholder="Description" ref="description" required/>
     </div>
     <div class="form-control price-container width-45">
-      <input type="number" min="0" max="900" step="1" v-model="price_1" name="price_1" placeholder="0"/>
+      <input type="number" min="0" max="2000" step="1" v-model="price_1" name="price_1" placeholder="0"/>
     </div>
     <div class="price-container dot-container">
       <p><strong>&bull;</strong></p>
     </div>
     <div class="form-control price-container width-45">
-      <input type="number" min="0" max="95" step="1" v-model="price_2" name="price_2" placeholder="00" />
+      <input type="number" min="0" max="99" step="1" v-model="price_2" name="price_2" placeholder="00" />
     </div>
     <div class="form-control">
       <select name="buyer" v-model="buyer">
@@ -104,6 +104,7 @@ export default {
       this.buyer = 0;
       this.owner = 0;
       this.date_create = 0;
+      this.$refs.description.focus();
     }
   }
 }

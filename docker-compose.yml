@@ -4,18 +4,23 @@ services:
       context: ./dockerfiles
       dockerfile: php.dockerfile
     volumes:
-      - './src:/var/www/html'
+      - './api:/var/www/html'
     networks:
-      eventprojector-network:
+      budget-calculator-network:
         ipv4_address: 172.84.24.11
 
-  nginx:
-    image: nginx:latest
+  vue:
+    image: node:latest
+    working_dir: /app
     volumes:
-      - './src:/var/www/html'
-      - './docker/nginx/conf.d:/etc/nginx/conf.d'
+      - "./vue/public:/app/public"
+      - "./vue/src:/app/src"
+      - "./vue/index.html:/app/index.html"
+      - "./vue/package.json:/app/package.json"
+      - "./vue/vite.config.js:/app/vite.config.js"
+    command: sh -c "npm install && npm run serve"
     networks:
-      eventprojector-network:
+      budget-calculator-network:
         ipv4_address: 172.84.24.12
 
   mysql:
@@ -26,11 +31,21 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - TZ=Asia/Muscat
     networks:
-      eventprojector-network:
+      budget-calculator-network:
         ipv4_address: 172.84.24.13
 
+  nginx:
+    image: nginx:latest
+    volumes:
+      - './api:/var/www/html'
+      - './nginx/conf.d:/etc/nginx/conf.d'
+    #network_mode: "service:vue"
+    networks:
+      budget-calculator-network:
+        ipv4_address: 172.84.24.14
+
 networks:
-  eventprojector-network:
+  budget-calculator-network:
     driver: bridge
     ipam:
       driver: default

@@ -23,13 +23,16 @@ export default {
       showAddPurchase: false,
       purchases: [],
       purchases_list: [],
-      api_url: '/api/index.php?',
-      //api_url: 'http://budget-calculator.localhost/api/index.php?',
+      api_url: 'http://172.84.24.14/index.php?',
+      //api_url: '/api/index.php?',
     }
   },
   methods: {
     toggleAddPurchase() {
       this.showAddPurchase = !this.showAddPurchase;
+      if(this.showAddPurchase) {
+        this.$refs.AddPurchase.description.focus();
+      }
     },
     async addPurchase(purchase) {
       const res = await fetch( this.api_url+'entity=purchase', {
@@ -59,7 +62,6 @@ export default {
     async fetchPurchases() {
       const res = await fetch(this.api_url+'entity=purchase');
       const data = await res.json();
-      console.log(data);
       return data;
     },
     async fetchPurchase(id) {
