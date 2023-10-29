@@ -30,7 +30,7 @@ export default {
   methods: {
     toggleAddPurchase() {
       this.showAddPurchase = !this.showAddPurchase;
-      if(this.showAddPurchase) {
+      if (this.showAddPurchase) {
         this.$refs.AddPurchase.description.focus();
       }
     },
@@ -47,11 +47,11 @@ export default {
       this.purchases_list = [data, ...this.purchases_list];
     },
     async deletePurchase(id) {
-      if(confirm('Are you sure?')) {
+      if (confirm('Are you sure?')) {
         const res = await fetch(this.api_url+'entity=purchase&id='+id, {
           method: 'DELETE'
         });
-        if(res.status === 200) {
+        if (res.status === 200) {
           this.purchases = this.purchases.filter((purchase) => purchase.id !== id);
           this.purchases_list = this.purchases_list.filter((purchase) => purchase.id !== id);
         } else {
@@ -87,7 +87,10 @@ export default {
       let budget = 0;
       for (let i = this.purchases.length - 1; i >= 0; i--) {
         let price = (this.purchases[i].owner == 3 ? this.extra_round(this.purchases[i].price / 2) : this.purchases[i].price);
-        if(this.purchases[i].buyer == 1) {
+        if (this.purchases[i].buyer == this.purchases[i].owner) {
+          continue;
+        }
+        if (this.purchases[i].buyer == 1) {
           budget -= price;
         } else {
           budget += price;

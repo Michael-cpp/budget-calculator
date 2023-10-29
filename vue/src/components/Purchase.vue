@@ -42,7 +42,7 @@ export default {
       return this.owner_list[this.purchase.buyer];
     },
     owner() {
-      if(this.purchase.owner === 3) {
+      if (this.purchase.owner === 3) {
         return '';
       }
       return this.owner_list[this.purchase.owner];

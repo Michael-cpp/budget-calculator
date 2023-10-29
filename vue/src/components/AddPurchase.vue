@@ -67,26 +67,26 @@ export default {
       e.preventDefault();
 
       let description = this.description.trim().toLowerCase();
-      if(!this.description) {
+      if (!this.description) {
         alert('Please fill out all required fields');
         return;
       }
 
-      if(!this.price_1 && !this.price_2) {
+      if (!this.price_1 && !this.price_2) {
         alert('Please fill out price');
         return;
       }
       let price = Number(this.price_1) * 100 + Number(this.price_2);
-      if(!price) {
+      if (!price) {
         alert('Wrong price');
         return;
       }
 
-      if(!this.buyer) {
+      if (!this.buyer) {
         alert('Please fill out buyer');
         return;
       }
-      if(!this.owner) {
+      if (!this.owner) {
         alert('Please fill out owner');
         return;
       }
@@ -95,7 +95,6 @@ export default {
         price: price,
         buyer: this.buyer,
         owner: this.owner,
-        //date_create: new Date().getTime(),
       }
       this.$emit('add-purchase', newpurchase);
       this.description = '';
