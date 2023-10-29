@@ -39,7 +39,6 @@ services:
     volumes:
       - './api:/var/www/html'
       - './nginx/conf.d:/etc/nginx/conf.d'
-    #network_mode: "service:vue"
     networks:
       budget-calculator-network:
         ipv4_address: 172.84.24.14
