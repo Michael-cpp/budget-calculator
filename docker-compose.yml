@@ -41,6 +41,8 @@ services:
     volumes:
       - './api:/var/www/html'
       - './nginx/conf.d:/etc/nginx/conf.d'
+    ports:
+      - 83:83
     networks:
       budget-calculator-network:
         ipv4_address: 172.84.24.14

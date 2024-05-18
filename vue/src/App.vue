@@ -23,8 +23,7 @@ export default {
       showAddPurchase: false,
       purchases: [],
       purchases_list: [],
-      api_url: 'http://172.84.24.14/index.php?',
-      //api_url: '/api/index.php?',
+      api_url: 'http://172.84.24.14:83/index.php?',
     }
   },
   methods: {
