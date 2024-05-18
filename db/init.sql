@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS budget_calculator;
+
 USE budget_calculator;
+
 CREATE TABLE IF NOT EXISTS `purchase` (
 `id` int NOT NULL AUTO_INCREMENT,
 `description` varchar(128) NOT NULL,
@@ -9,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `purchase` (
 `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1306 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON budget_calculator.* TO 'root'@'%';
 FLUSH PRIVILEGES;
